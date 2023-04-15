@@ -1,0 +1,28 @@
+#Follow chapter 7 steps to populate ths synapse data explorer table before running this Kusto QL scripts
+sdxdebtbl
+| take 1000
+
+## Find count of number of rows in a table
+sdxdebtbl
+| count  
+
+## Retrieve sample 1000 rows from table
+sdxdebtbl
+|take 1000
+
+##Fetch sample 100 Hackney license ID
+sdxdebtbl
+|take 100 
+|project HackneyLicenseID
+
+##Sort previously selected rows
+sdxdebtbl
+|take 100 
+|sort by HackneyLicenseID
+|project HackneyLicenseID
+
+##Retrieve columns and aggregate
+sdxdebtbl
+|summarize MedallionID = count () by DateID 
+
+
